@@ -7,7 +7,7 @@
   --gold-bright: #c9a83e;
   --line: rgba(45, 65, 95, 0.18);
   --serif: 'Cinzel', serif;
-  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --sans: 'Literata', Georgia, 'Times New Roman', serif;
 }
 
 * { box-sizing: border-box; }
@@ -18,7 +18,8 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--sans);
-  line-height: 1.5;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
 }
 
