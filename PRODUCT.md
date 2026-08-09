@@ -32,7 +32,7 @@ Static site, no backend/build step. All video embeds are real YouTube Shorts (`r
 
 ## Brand Commitments
 
-Name: The Studio of Worlds (short: SoW). Voice: cinematic, epic, mythic. Type system: Cinzel (serif display) for headings, Inter (sans) for body. Current visual system: black background, white text, gold accent. Creative partners to credit: PixVerse, ThankYou AI, YouArt AI.
+Name: The Studio of Worlds (short: SoW). Voice: cinematic, epic, mythic. Type system: Cinzel (serif display) for headings, Literata (serif) for body. Current visual system: black background, white text, gold accent. Creative partners to credit: PixVerse, ThankYou AI, YouArt AI.
 
 ## Evidence on Hand
 

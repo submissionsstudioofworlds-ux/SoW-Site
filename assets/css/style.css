@@ -5,7 +5,10 @@
   --ink-dim: #b3b3b3;
   --gold: #af9128;
   --gold-bright: #c9a83e;
-  --line: rgba(45, 65, 95, 0.18);
+  --line: color-mix(in srgb, var(--ink) 18%, transparent);
+  --bg-scrim-strong: color-mix(in srgb, var(--bg) 82%, transparent);
+  --bg-scrim-soft: color-mix(in srgb, var(--bg) 70%, transparent);
+  --gold-glow: color-mix(in srgb, var(--gold) 14%, transparent);
   --serif: 'Cinzel', serif;
   --sans: 'Literata', Georgia, 'Times New Roman', serif;
 }
@@ -70,7 +73,7 @@ a { color: inherit; text-decoration: none; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(11, 10, 8, 0.82);
+  background: var(--bg-scrim-strong);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -148,7 +151,7 @@ a { color: inherit; text-decoration: none; }
   padding: 160px 0 120px;
   text-align: center;
   background:
-    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(175, 145, 40, 0.14), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 50% 0%, var(--gold-glow), transparent 70%),
     linear-gradient(180deg, #0b0a08 0%, #0e0c09 100%);
   overflow: hidden;
 }
@@ -311,7 +314,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--gold-bright);
-  background: rgba(11, 10, 8, 0.7);
+  background: var(--bg-scrim-soft);
 }
 
 .poster {
@@ -366,6 +369,7 @@ a { color: inherit; text-decoration: none; }
 .poster-title {
   position: relative;
   z-index: 1;
+  margin: 0;
   font-family: var(--serif);
   font-size: 21px;
   line-height: 1.25;
@@ -441,8 +445,11 @@ a { color: inherit; text-decoration: none; }
 }
 
 .community-title {
+  display: block;
+  margin: 0;
   font-family: var(--serif);
   font-size: 18px;
+  font-weight: 600;
   color: var(--gold-bright);
 }
 
@@ -517,4 +524,13 @@ a { color: inherit; text-decoration: none; }
   .hero { padding: 130px 0 90px; }
   .stats { gap: 36px; }
   .full-banner { height: 220px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .world-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html { scroll-behavior: auto; }
 }
