@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Emberwing — Skies of the Sundered Realms | The Studio of Worlds</title>
+<meta name="description" content="Emberwing is a free browser arcade shooter from The Studio of Worlds. Fly a dragon through four realms with fire, frost and storm breath." />
+<link rel="icon" href="../../assets/images/favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="icon" href="../../assets/images/favicon-16.png" sizes="16x16" type="image/png" />
+<link rel="apple-touch-icon" href="../../assets/images/favicon-180.png" />
+<link rel="canonical" href="https://studioofworlds.com/games/emberwing/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Studio of Worlds" />
+<meta property="og:title" content="Emberwing — Skies of the Sundered Realms" />
+<meta property="og:description" content="A free browser arcade shooter. Fly a dragon through four realms with fire, frost and storm breath." />
+<meta property="og:url" content="https://studioofworlds.com/games/emberwing/" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="game.css" />
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="top">
+    <div>
+      <h1 class="title">Emberwing</h1>
+      <p class="subtitle">Skies of the Sundered Realms</p>
+    </div>
+    <a class="back" href="../../">&larr; The Studio of Worlds</a>
+  </div>
+
+  <div id="stage">
+    <div id="loading">Waking the wyrm&hellip;</div>
+    <canvas id="screen" width="320" height="240" tabindex="0"
+            aria-label="Emberwing arcade game. Steer with the arrow keys, breathe fire with the space bar."></canvas>
+  </div>
+
+  <div class="bar">
+    <button type="button" class="weapon-fire" data-weapon="0" aria-pressed="true">1 &middot; Fire</button>
+    <button type="button" class="weapon-frost" data-weapon="1" aria-pressed="false">2 &middot; Frost</button>
+    <button type="button" class="weapon-storm" data-weapon="2" aria-pressed="false">3 &middot; Storm</button>
+    <span class="sep" aria-hidden="true"></span>
+    <button type="button" class="hold" data-hold="surge">Surge</button>
+    <button type="button" class="hold" data-hold="glide">Glide</button>
+    <span class="sep" aria-hidden="true"></span>
+    <button type="button" id="btn-pause">Pause</button>
+    <button type="button" id="btn-sound" aria-pressed="true">Sound: on</button>
+    <button type="button" id="btn-full">Fullscreen</button>
+  </div>
+
+  <div class="help">
+    <h2>How to fly</h2>
+
+    <dl class="key-only">
+      <dt><kbd>&larr;</kbd> <kbd>&uarr;</kbd> <kbd>&darr;</kbd> <kbd>&rarr;</kbd> / <kbd>WASD</kbd></dt>
+      <dd>Steer. The dragon never stops — it banks toward the direction you hold.</dd>
+      <dt><kbd>Space</kbd> / <kbd>Z</kbd></dt>
+      <dd>Breathe. Hold it down.</dd>
+      <dt><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> / <kbd>X</kbd></dt>
+      <dd>Switch breath weapon.</dd>
+      <dt><kbd>Shift</kbd> / <kbd>E</kbd></dt>
+      <dd>Surge. Nearly double speed, but it burns ember while you hold it.</dd>
+      <dt><kbd>Ctrl</kbd> / <kbd>Q</kbd></dt>
+      <dd>Glide. Drop to a crawl to turn tight and line up a shot. Free.</dd>
+      <dt><kbd>P</kbd> &middot; <kbd>M</kbd></dt>
+      <dd>Pause &middot; mute.</dd>
+    </dl>
+
+    <dl class="touch-only">
+      <dt>Left half</dt>
+      <dd>Touch and drag to steer.</dd>
+      <dt>Right half</dt>
+      <dd>Hold to breathe.</dd>
+      <dt>Surge / Glide</dt>
+      <dd>Hold the buttons above to speed up or slow down.</dd>
+      <dt>Buttons above</dt>
+      <dd>Switch breath weapon.</dd>
+    </dl>
+
+    <h2>The three breaths</h2>
+    <dl>
+      <dt>Fire</dt>
+      <dd>Free and fast. Your bread and butter.</dd>
+      <dt>Frost</dt>
+      <dd>A three-shard cone that freezes what it hits. Frozen enemies take double damage — freeze, then shatter.</dd>
+      <dt>Storm</dt>
+      <dd>A piercing bolt that punches through a line of enemies and arcs to a nearby one. Expensive.</dd>
+    </dl>
+
+    <h2>Staying alive</h2>
+    <p class="note">
+      Frost, storm and surge all draw on the same ember meter, which refills on its own when
+      you're not spending it &mdash; speed and firepower compete for the same resource.
+      Rescue a drifting hatchling to refill it instantly and bank 1,000 points.
+    </p>
+    <p class="note">
+      You earn an extra wing at 20,000 points (then every 40,000), and another for
+      <strong>every five hatchlings</strong> you carry to safety &mdash; the pips beside your
+      wing count track your progress. Clear the realm's kill quota and the Sky Leviathan comes
+      for you. Four realms, then it all begins again &mdash; faster.
+    </p>
+  </div>
+
+</div>
+
+<script src="sprites.js"></script>
+<script src="audio.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
