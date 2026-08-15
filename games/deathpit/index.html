@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>The Death Pit of Shem — Bob Goblin vs the Plancktopus | The Studio of Worlds</title>
+<meta name="description" content="A free 16-bit browser platformer from The Studio of Worlds. Bob Goblin is thrown into a bioluminescent cavern and must sever every arm of the Plancktopus before the first one grows back." />
+<link rel="icon" href="../../assets/images/favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="icon" href="../../assets/images/favicon-16.png" sizes="16x16" type="image/png" />
+<link rel="apple-touch-icon" href="../../assets/images/favicon-180.png" />
+<link rel="canonical" href="https://studioofworlds.com/games/deathpit/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Studio of Worlds" />
+<meta property="og:title" content="The Death Pit of Shem" />
+<meta property="og:description" content="A free 16-bit browser platformer. Bob Goblin, one stolen sandwich, and a one-eyed monster with far too many arms." />
+<meta property="og:url" content="https://studioofworlds.com/games/deathpit/" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="game.css" />
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="top">
+    <div>
+      <h1 class="title">The Death Pit of Shem</h1>
+      <p class="subtitle">Bob Goblin has some regrets</p>
+    </div>
+    <a class="back" href="../../">&larr; The Studio of Worlds</a>
+  </div>
+
+  <div id="stage">
+    <div id="loading">Digging the pit&hellip;</div>
+    <canvas id="screen" width="384" height="224" tabindex="0"
+            aria-label="The Death Pit of Shem, a platform game. Move with the arrow keys, jump with the space bar, and attack with Z."></canvas>
+  </div>
+
+  <div class="bar pad">
+    <button type="button" class="hold go" data-hold="left" aria-label="Move left">&larr;</button>
+    <button type="button" class="hold go" data-hold="right" aria-label="Move right">&rarr;</button>
+    <button type="button" class="hold go" data-hold="down" aria-label="Crouch or drop through a platform">&darr;</button>
+    <button type="button" class="hold hit" data-hold="jump" aria-label="Jump">Jump</button>
+    <button type="button" class="hold hit" data-hold="attack" aria-label="Attack">Stab</button>
+  </div>
+
+  <div class="bar">
+    <button type="button" id="btn-pause">Pause</button>
+    <button type="button" id="btn-sound" aria-pressed="true">Sound: on</button>
+    <button type="button" id="btn-full">Fullscreen</button>
+  </div>
+
+  <div class="help">
+    <h2>The situation</h2>
+    <p class="note">
+      Bob Goblin stole one (1) sandwich. The sentence for this, in Shem, is the pit.
+      He lands in a cavern lit from the inside, full of things that glow and bite, and at
+      the bottom of every level hangs the <strong>Plancktopus</strong> &mdash; one enormous
+      eye and a great many arms.
+    </p>
+    <p class="note">
+      Cut off <strong>every arm at once</strong> and the eye opens. Take too long and the
+      arms you already cut simply grow back. The first fight has three arms.
+      Every level after that adds another.
+    </p>
+
+    <h2>Controls</h2>
+
+    <dl class="key-only">
+      <dt><kbd>&larr;</kbd> <kbd>&rarr;</kbd> / <kbd>A</kbd> <kbd>D</kbd></dt>
+      <dd>Run.</dd>
+      <dt><kbd>Space</kbd> / <kbd>&uarr;</kbd> / <kbd>W</kbd></dt>
+      <dd>Jump. Hold for height, let go early to hop.</dd>
+      <dt><kbd>Z</kbd> / <kbd>X</kbd> / <kbd>J</kbd></dt>
+      <dd>Stab with the dagger.</dd>
+      <dt>Land on anything</dt>
+      <dd>Jump on a creature and you squash it and bounce, no dagger needed.</dd>
+      <dt><kbd>&darr;</kbd> + <kbd>Z</kbd> in the air</dt>
+      <dd>Down-stab. The same idea with the blade out &mdash; hits twice as hard, and is
+          the fastest way across a room.</dd>
+      <dt><kbd>&darr;</kbd> on a shelf</dt>
+      <dd>Drop through it.</dd>
+      <dt><kbd>P</kbd> &middot; <kbd>M</kbd></dt>
+      <dd>Pause &middot; mute.</dd>
+    </dl>
+
+    <dl class="touch-only">
+      <dt>&larr; &rarr;</dt>
+      <dd>Run. Hold them down.</dd>
+      <dt>Jump</dt>
+      <dd>Hold for height, tap for a hop.</dd>
+      <dt>Landing on things</dt>
+      <dd>Jumping onto a creature squashes it and bounces you, no button needed.</dd>
+      <dt>Stab</dt>
+      <dd>Attack. Hold &darr; and stab in mid-air to down-stab, which hits harder.</dd>
+      <dt>&darr;</dt>
+      <dd>Drop through a mushroom shelf.</dd>
+    </dl>
+
+    <h2>Fighting the Plancktopus</h2>
+    <p class="note">
+      An arm that is winding up <strong>glows red</strong> and will hurt you. An arm that
+      has already struck goes <strong>cold and blue</strong> for about two seconds &mdash;
+      that is the only time it is both harmless and low enough to reach. So bait a slam,
+      get out of the way, and chop the arm on the floor before it pulls back up.
+    </p>
+    <p class="note">
+      The pips along the bottom of the screen are the arms: filled means alive, and the
+      timer tells you how long until the first severed one returns. Sever the last arm and
+      the body sinks, the eye opens, and you have five seconds to put a dagger in it.
+    </p>
+
+    <h2>What you can pick up</h2>
+    <dl>
+      <dt>Keen Edge</dt>
+      <dd>Re-forges the dagger: longer reach and double damage, which takes an arm off in
+          two hits instead of three. Lasts until you die.</dd>
+      <dt>Shield</dt>
+      <dd><strong>One use only.</strong> Absorbs the next hit completely, then shatters.
+          You are wearing it when there is a bubble around Bob.</dd>
+      <dt>Extra Bob</dt>
+      <dd>A gold heart, and genuinely rare. Most runs turn up one every few levels.</dd>
+      <dt>Glimmer &middot; Heart</dt>
+      <dd>Points &middot; one heart back.</dd>
+    </dl>
+    <p class="note">
+      A few of each are hidden in the caverns. The rest come off things you kill, at odds
+      low enough that finding one still feels like luck.
+    </p>
+
+    <h2>Staying alive</h2>
+    <p class="note">
+      Four hearts, three Bobs. Glowing ink costs a heart and throws you back out, so it is
+      a mistake rather than a death. Bounce shrooms launch you further than a jump.
+      Dying in the arena restarts the fight, not the whole level &mdash; but it does cost
+      you the Keen Edge.
+    </p>
+  </div>
+
+</div>
+
+<script src="sprites.js"></script>
+<script src="audio.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
